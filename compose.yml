@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  printer-viewer:
+    build: .
+    container_name: printer-viewer
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frames:/data:ro
+    restart: unless-stopped
